@@ -27,7 +27,7 @@ jobs:
     timeout-minutes: 15
 
     services:
-      postgres:
+      db:
         image: postgres:13-alpine
         env:
           POSTGRES_DB: foodgram_database
