@@ -42,11 +42,16 @@ jobs:
           --health-retries 5
 
     env:
-      DJANGO_SETTINGS_MODULE: foodgram.settings
-      DB_ENGINE: django.db.backends.postgresql
-      SECRET_KEY: ${{ secrets.CI_SECRET_KEY }}
-      DEBUG: 'False'
-      ALLOWED_HOSTS: 'localhost,127.0.0.1'
+        DJANGO_SETTINGS_MODULE: foodgram_backend.settings.ci
+        DB_ENGINE: django.db.backends.postgresql
+        DB_NAME: foodgram_database
+        DB_USER: foodgram_user
+        DB_PASSWORD: user_password
+        DB_HOST: foodgram_database
+        DB_PORT: 5432
+        DEBUG: 'False'
+        ALLOWED_HOSTS: 'localhost,127.0.0.1'
+        DATABASE_URL: postgresql://foodgram_user:user_password@db:5432/foodgram_database
 
     steps:
       - name: Checkout repository
