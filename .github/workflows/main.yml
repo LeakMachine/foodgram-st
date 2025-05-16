@@ -42,7 +42,7 @@ jobs:
           --health-retries 5
 
     env:
-        DJANGO_SETTINGS_MODULE: foodgram_backend.settings.ci
+        DJANGO_SETTINGS_MODULE: foodgram.settings
         DB_ENGINE: django.db.backends.postgresql
         DB_NAME: foodgram_database
         DB_USER: foodgram_user
