@@ -5,8 +5,6 @@ from recipes.models import Recipe, Ingredient, RecipeIngredient
 from drf_extra_fields.fields import Base64ImageField
 from django.core.validators import RegexValidator
 from django.contrib.auth import authenticate
-from rest_framework.authtoken.models import Token
-from rest_framework.response import Response
 
 
 USERNAME_LENGTH = 150
@@ -221,7 +219,7 @@ class RecipeSerializer(serializers.ModelSerializer):
                 raise serializers.ValidationError(
                     {"image": ["Это поле обязательно."]}
                 )
-                
+
             if self.instance and self.context[
                 "request"
             ].method == "PUT" and "image" not in data_keys:
@@ -319,7 +317,7 @@ class SubscriptionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subscription
         fields = (
-            'id','username', 'first_name',
+            'id', 'username', 'first_name',
             'last_name', 'email', 'is_subscribed',
             'avatar', 'recipes_count', 'recipes',
         )
