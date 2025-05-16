@@ -84,7 +84,7 @@ docker-compose exec backend python manage.py migrate
 docker-compose exec backend python manage.py createsuperuser
 ```
 
-### 5. Загрузите рецепты в БД
+### 5. Загрузите ингредиенты в БД
 
 ```sh
 docker-compose exec backend python manage.py db_import
