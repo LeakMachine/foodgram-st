@@ -90,4 +90,4 @@ jobs:
 
       - name: Lint with flake8
         run: |
-          flake8 api/ users/ recipes/ --exclude migrations
+          flake8 backend/api/ backend/users/ backend/recipes/ --exclude migrations
