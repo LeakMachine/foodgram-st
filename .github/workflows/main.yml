@@ -82,6 +82,9 @@ jobs:
 
       - name: Run migrations
         run: |
+          python backend/manage.py makemigrations users
+          python backend/manage.py makemigrations recipes
+          python backend/manage.py makemigrations api
           python backend/manage.py makemigrations
           python backend/manage.py migrate
 
