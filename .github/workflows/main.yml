@@ -42,7 +42,7 @@ jobs:
           --health-retries 5
 
     env:
-      DJANGO_SETTINGS_MODULE: foodgram.settings.ci
+      DJANGO_SETTINGS_MODULE: foodgram.settings
       DB_ENGINE: django.db.backends.postgresql
       SECRET_KEY: ${{ secrets.CI_SECRET_KEY }}
       DEBUG: 'False'
